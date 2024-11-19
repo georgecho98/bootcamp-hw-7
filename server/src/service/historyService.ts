@@ -1,3 +1,5 @@
+import fs = require('fs');
+
 // TODO: Define a City class with name and id properties
 class city  {
   name: string; 
@@ -11,13 +13,25 @@ class HistoryService {
 
     // TODO: Define a read method that reads from the searchHistory.json file
   private async read() {
-
-
+    fs.readFile
+    const history = await JSON.parse(data);
+    return history;
   }
+
   // TODO: Define a write method that writes the updated cities array to the searchHistory.json file
-  // private async write(cities: City[]) {}
+  private async write(cities: City[]) {
+    const updated = city[];
+
+    const x = JSON.stringify(    .appendchild(cities))
+    fs.writeFile(searchHistory.JSON, x);
+}
   // TODO: Define a getCities method that reads the cities from the searchHistory.json file and returns them as an array of City objects
-  // async getCities() {}
+  async getCities() {
+    const xx= this.read();
+
+     return xx;
+ 
+}
   // TODO Define an addCity method that adds a city to the searchHistory.json file
   async addCity(city: string) {
     const xx =   
