@@ -23,8 +23,8 @@ class weather {
 class WeatherService implements xx {
   // TODO: Define the baseURL, API key, and city name properties
     const city = document.getElementById('city-input').value;
-    const apiKey = process.env.key;
-    const url = process.env.url;
+    const apiKey = 'a72fd5b57b39a74eb1bd5d872c138b8f';
+    const url = "https://api.openweathermap.org";
     // `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   // TODO: Create fetchLocationData method
   private async fetchLocationData(query: string) {
@@ -49,7 +49,7 @@ class WeatherService implements xx {
 
   // TODO: Create destructureLocationData method
   private destructureLocationData(locationData: Coordinates) {
-      const locationData ={
+      const locationData = {
         x : xxx;
         y : seddd;
       }

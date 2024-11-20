@@ -1,11 +1,9 @@
 ## MiMi Weather forcast apps 
 
 ## Description
-    This is a weather forcast apps. It utilizes the API key from the openweather staion to extract weather data based on the city entry. 
-     Developers are often tasked with retrieving data from another application's API and using it in their context, frequently consuming this data via a server.
+    This is a weather forcast apps. It utilizes the API key from the openweather staion to extract weather data based on the city entry. Retrieving data from a third party website application's API and using it in their context, frequently consuming this data via a server.
 
     
-
 ## Table of Contents
 1. [Installation](#installation)
 2. [Usage](#usage)
