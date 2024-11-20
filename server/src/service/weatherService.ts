@@ -3,11 +3,12 @@ import fs from 'fs';
 dotenv.config();
 
 // TODO: Define an interface for the Coordinates object
-interface xx {
+interface Coordinates {
 
-  Coordinates:
-
+  latitude: number;
+    longitude: number;
 }
+
 // TODO: Define a class for the Weather object
 class weather {
     temperature: number;
@@ -20,32 +21,36 @@ class weather {
 
 }
 // TODO: Complete the WeatherService class
-class WeatherService implements xx {
+class WeatherService implements Coordinates {
   // TODO: Define the baseURL, API key, and city name properties
-    const city = document.getElementById('city-input').value;
+    const lat = latitude;
+    const lon = longitude;
     const apiKey = 'a72fd5b57b39a74eb1bd5d872c138b8f';
-    const url = "https://api.openweathermap.org";
-    // `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  // TODO: Create fetchLocationData method
-  private async fetchLocationData(query: string) {
-      fetch(url)
-        .then(response => response.json())
-        .then(data => {
+    const url =  `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`;
 
-        const tempInF = (data.main.temp * 9 / 5) +32;
-          const weatherInfo = `
-              <p>${data.name} Weather</p>
-              <p>Temperature: ${tempInF.toFixed(2)} °F</p>
-              <p>Humidity: ${data.main.humidity}%</p>
-              <p>Description: ${data.weather[0].description}</p>
-          `;
-          document.getElementById('weather-info').innerHTML = weatherInfo;
-        })
-        .catch(error => {
-          toastr.error('Invalid City');
-          console.error('Error fetching weather data:', error);
-      });
-    }
+
+  private async fetchLocationData(query: string) {
+      const this.x = await latitude;
+      const this.y = longitude;
+
+    //   fetch(url)
+    //     .then(response => response.json())
+    //     .then(data => {
+
+    //     const tempInF = (data.main.temp * 9 / 5) +32;
+    //       const weatherInfo = `
+    //           <p>${data.name} Weather</p>
+    //           <p>Temperature: ${tempInF.toFixed(2)} °F</p>
+    //           <p>Humidity: ${data.main.humidity}%</p>
+    //           <p>Description: ${data.weather[0].description}</p>
+    //       `;
+    //       document.getElementById('weather-info').innerHTML = weatherInfo;
+    //     })
+    //     .catch(error => {
+    //       toastr.error('Invalid City');
+    //       console.error('Error fetching weather data:', error);
+    //   });
+    // }
 
   // TODO: Create destructureLocationData method
   private destructureLocationData(locationData: Coordinates) {
