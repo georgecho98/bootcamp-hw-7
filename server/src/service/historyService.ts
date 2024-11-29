@@ -9,28 +9,35 @@ class city  {
     this.name = name;
     this.id = id;}}
 // TODO: Complete the HistoryService class
-class HistoryService {
+class HistoryService  {
 
     // TODO: Define a read method that reads from the searchHistory.json file
   private async read() {
-    fs.readFile
-    const history = await JSON.parse(data);
-    return history;
-  }
+    fs.readFile('searchHistory.json', 'utf8', (err, data) => {
+      if (err) {
+          console.error('Error reading file:', err);
+          return;
+      }
 
+      const history = JSON.parse(data); // Parse the JSON string into an object
+      console.log(history);
+      return history;
+  })
   // TODO: Define a write method that writes the updated cities array to the searchHistory.json file
-  private async write(cities: City[]) {
-    const updated = city[];
-
-    const x = JSON.stringify(    .appendchild(cities))
-    fs.writeFile(searchHistory.JSON, x);
+  private async write(cities: []) {
+    const data = JSON.stringify(cities, null, 2);
+    
+    fs.writeFile('searchHistory.JSON',data, (err) => {
+      if (err) throw err;
+      console.log('The file has been saved!');
+    });
 }
   // TODO: Define a getCities method that reads the cities from the searchHistory.json file and returns them as an array of City objects
   async getCities() {
-    const xx= this.read();
-
-     return xx;
- 
+    for (let i=0; i<this.read.length;i++){
+     x[i]= this.read[i];
+    }
+    return x;
 }
   // TODO Define an addCity method that adds a city to the searchHistory.json file
   async addCity(city: string) {

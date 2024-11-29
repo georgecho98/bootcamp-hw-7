@@ -1,22 +1,29 @@
 import dotenv from 'dotenv';
 import fs from 'fs';
+import dayjs,{type Dayjs} from 'dayjs';
 dotenv.config();
 
 // TODO: Define an interface for the Coordinates object
 interface Coordinates {
-
+  cityname: String
   latitude: number;
     longitude: number;
 }
 
 // TODO: Define a class for the Weather object
 class weather {
-    temperature: number;
-    humidity:number;
+    public temperature: number;
+    public humidity:number;
+    public currentDate:Dayjs;
+    public windSpeed:number;
+    public icon: string;
 
-    constructor (temperature:number,humidity :number) {
+    constructor (temperature:number,humidity :number,currentDate:Dayjs,windSpeed: number,icon:string ) {
       this.temperature=temperature;
       this.humidity = humidity;
+      this.currentDate = currentDate;
+      this.windSpeed = windSpeed;
+      this.icon= icon;
     }
 
 }
@@ -30,42 +37,22 @@ class WeatherService implements Coordinates {
 
 
   private async fetchLocationData(query: string) {
-      const this.x = await latitude;
+      const this.x = latitude;
       const this.y = longitude;
-
-    //   fetch(url)
-    //     .then(response => response.json())
-    //     .then(data => {
-
-    //     const tempInF = (data.main.temp * 9 / 5) +32;
-    //       const weatherInfo = `
-    //           <p>${data.name} Weather</p>
-    //           <p>Temperature: ${tempInF.toFixed(2)} °F</p>
-    //           <p>Humidity: ${data.main.humidity}%</p>
-    //           <p>Description: ${data.weather[0].description}</p>
-    //       `;
-    //       document.getElementById('weather-info').innerHTML = weatherInfo;
-    //     })
-    //     .catch(error => {
-    //       toastr.error('Invalid City');
-    //       console.error('Error fetching weather data:', error);
-    //   });
-    // }
+  }
 
   // TODO: Create destructureLocationData method
   private destructureLocationData(locationData: Coordinates) {
-      const locationData = {
-        x : xxx;
-        y : seddd;
-      }
-
-      let {x, y } = jesus;
+    const { latitude, longitude } = locationData;
+    const locationData = {
+      x: latitude,
+      y: longitude
+    }
+    let { x, y } = locationData;
   }
 
-
-
   // TODO: Create buildGeocodeQuery method
-  // private buildGeocodeQuery(): string {}
+  private buildGeocodeQuery(): string {}
   // TODO: Create buildWeatherQuery method
   // private buildWeatherQuery(coordinates: Coordinates): string {}
   // TODO: Create fetchAndDestructureLocationData method
